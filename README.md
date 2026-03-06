@@ -16,7 +16,7 @@ The human microbiome is increasingly recognized as a key factor in disease risk,
 ### What This Pipeline Does
 
 1. **Taxonomic Profiling** — Identifies which microbial species are present and at what abundance using Kraken2 and MetaPhlAn4
-2. **Functional Annotation** — Determines what metabolic pathways those microbes encode using HUMAnN4
+2. **Functional Annotation** — Determines what metabolic pathways those microbes encode using HUMAnN3
 3. **Disease Prediction** — Builds ML models that predict disease status from microbial composition and function
 
 ### Why This Matters
@@ -38,8 +38,8 @@ graph TD
     C --> |MetaPhlAn4| C2[Relative Abundance Profiles]
     C1 --> C3[Bracken Abundance Estimation]
 
-    D --> |HUMAnN4| D1[Pathway Abundance]
-    D --> |HUMAnN4| D2[Gene Family Abundance]
+    D --> |HUMAnN3| D1[Pathway Abundance]
+    D --> |HUMAnN3| D2[Gene Family Abundance]
 
     C2 --> E[Feature Engineering]
     C3 --> E
@@ -83,7 +83,7 @@ graph TD
   - [ ] MetaPhlAn4 profiling for species-level abundances
   - [ ] Taxonomic summary tables and visualization
 - [ ] **Phase 4** — Functional Annotation
-  - [ ] HUMAnN4 pathway and gene family quantification
+  - [ ] HUMAnN3 pathway and gene family quantification
   - [ ] Pathway abundance normalization
   - [ ] Functional diversity metrics
 - [ ] **Phase 5** — Feature Engineering & ML
@@ -138,9 +138,9 @@ kraken2-build --standard --db databases/kraken2_standard
 # MetaPhlAn4 database
 metaphlan --install --bowtie2db databases/metaphlan4
 
-# HUMAnN4 databases
-humann_databases --download chocophlan full databases/humann4
-humann_databases --download uniref uniref90_diamond databases/humann4
+# HUMAnN3 databases
+humann_databases --download chocophlan full databases/HUMAnN3
+humann_databases --download uniref uniref90_diamond databases/HUMAnN3
 ```
 
 ---
@@ -191,7 +191,7 @@ microbiome-disease-pipeline/
 │   │   └── run_metaphlan.py  # MetaPhlAn4 profiling
 │   ├── functional/            # Pathway annotation
 │   │   ├── __init__.py
-│   │   └── run_humann.py     # HUMAnN4 pipeline
+│   │   └── run_humann.py     # HUMAnN3 pipeline
 │   ├── features/              # Feature engineering
 │   │   ├── __init__.py
 │   │   ├── diversity.py      # Alpha & beta diversity
@@ -230,7 +230,7 @@ microbiome-disease-pipeline/
 |----------|-------|
 | Language | Python 3.11 |
 | Taxonomic Profiling | Kraken2, Bracken, MetaPhlAn4 |
-| Functional Annotation | HUMAnN4, ChocoPhlAn, UniRef90 |
+| Functional Annotation | HUMAnN3, ChocoPhlAn, UniRef90 |
 | Preprocessing | KneadData, FASTQC, Trimmomatic |
 | Data Processing | pandas, NumPy, SciPy |
 | ML/Statistics | scikit-learn, statsmodels |
