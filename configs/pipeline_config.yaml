@@ -1,0 +1,44 @@
+# Microbiome Disease Association Pipeline Configuration
+
+# Database paths
+databases:
+  kraken2: databases/kraken2_standard/
+  metaphlan4: databases/metaphlan4/
+  humann4_nucleotide: databases/humann4/chocophlan/
+  humann4_protein: databases/humann4/uniref90/
+
+# Processing parameters
+preprocessing:
+  min_read_length: 60
+  min_quality: 20
+  host_reference: databases/human_genome/GRCh38
+
+profiling:
+  kraken2:
+    confidence: 0.0
+    threads: 8
+    read_length: 150
+  metaphlan:
+    threads: 8
+    analysis_type: rel_ab_w_read_stats
+
+# Feature engineering
+features:
+  alpha_diversity_metrics:
+    - shannon
+    - simpson
+    - chao1
+    - observed
+  beta_diversity_metric: bray_curtis
+  pcoa_components: 3
+
+# Modeling
+modeling:
+  target_col: disease_status
+  test_size: 0.2
+  cv_folds: 5
+  random_state: 42
+  models:
+    - random_forest
+    - gradient_boosting
+    - logistic_regression

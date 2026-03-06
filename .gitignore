@@ -1,0 +1,53 @@
+# Data (never commit raw genomic/health data)
+data/
+*.fastq
+*.fastq.gz
+*.bam
+*.bai
+*.vcf
+*.vcf.gz
+*.bed
+*.sam
+*.fasta
+*.fa
+*.fai
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+dist/
+build/
+.eggs/
+*.egg
+
+# Environments
+.env
+.venv/
+env/
+venv/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Cloud credentials
+*.pem
+*.json
+!configs/*.json
+credentials/
+
+# Outputs
+results/
+*.log
