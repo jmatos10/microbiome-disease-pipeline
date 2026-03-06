@@ -72,16 +72,16 @@ graph TD
 - [x] **Phase 1** — Project Setup & Data Acquisition
   - [x] Repository structure and documentation
   - [x] Tool installation scripts (Kraken2, MetaPhlAn4, HUMAnN3)
-  - [ ] Download reference databases (Kraken2 standard DB, MetaPhlAn4 DB)
-  - [ ] Sample dataset selection and download
-- [ ] **Phase 2** — Quality Control & Preprocessing
-  - [ ] Read QC with FASTQC
-  - [ ] Host DNA removal with KneadData
-  - [ ] Quality filtering and adapter trimming
+  - [x] Download reference databases (Kraken2 standard DB, MetaPhlAn4 DB)
+  - [x] Sample dataset selection and download
+- [x] **Phase 2** — Quality Control & Preprocessing
+  - [x] Read QC with FASTQC
+  - [x] Host DNA removal with KneadData
+  - [x] Quality filtering and adapter trimming
 - [ ] **Phase 3** — Taxonomic Profiling
-  - [ ] Kraken2 classification + Bracken abundance estimation
-  - [ ] MetaPhlAn4 profiling for species-level abundances
-  - [ ] Taxonomic summary tables and visualization
+  - [x] Kraken2 classification + Bracken abundance estimation
+  - [x] MetaPhlAn4 profiling for species-level abundances
+  - [x] Taxonomic summary tables and visualization
 - [ ] **Phase 4** — Functional Annotation
   - [ ] HUMAnN3 pathway and gene family quantification
   - [ ] Pathway abundance normalization
